@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.child {
+    flex-basis: calc(33.33% - 20px); /* Adjust the width based on your desired spacing */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
