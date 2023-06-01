@@ -5,11 +5,96 @@ h1{
 .parent {
     display: flex;
     justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .child {
-    flex-basis: calc(33.33% - 20px); /* Adjust the width based on your desired spacing */
-    border: 1px solid #ccc;
-    padding: 20px;
+    width: 30%;
+    border: 2px solid #000;
+    padding: 10px;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.child h2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    margin: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.one{
+    background-color: #D59898;
+}
+
+.two{
+    background-color: #C14543;
+    color: white;
+}
+
+.three{
+    background-color: #E5D198;
+}
+
+/* code for making the page responsive */
+
+/* for desktop view */
+@media (min-width: 992px) {
+    .parent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .child {
+        width: calc(33.33% - 20px);
+        float: left;
+        margin-right: 20px;
+    }
+
+    .child:last-child {
+        margin-right: 0;
+    }
+}
+
+/* for tablet view */
+@media (min-width: 768px) and (max-width: 991px) {
+    .parent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .child {
+        width: 40%;
+        /* float: left; */
+        margin: 20px;
+    }
+
+    .child:nth-child(3) {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+}
+
+/* for mobile view */
+@media (max-width: 767px) {
+    .parent {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .child {
+        width: 33.33%;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .child:last-child {
+        margin-right: 0;
+    }
 }
